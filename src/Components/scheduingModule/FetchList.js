@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import {fetchAllSFlightsAction } from '../../redux/SFlightActions'
 import Footer from '../Footer'
 import Delete from './Delete'
+import Modify from './Modify'
 
 
 function FetchList({getFlightList,fetchAllSFlightsAction})
 {
     let [del,setDel]=useState(0)
-    let [prop,setProp]=useState(" ")
+    let [prop,setProp]=useState("0")
     
     useEffect(()=>
         {
@@ -82,7 +83,7 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                                     <td scope="col" rowSpan="3">
                                         <div className="mt-2" >
                                           
-                                        <button className="btn btn-warning" id="editbtn"> Edit</button>
+                                        <Link to="/modify" className="btn btn-warning" id="editbtn"> Edit</Link>
                                               
                                         </div>
                                         <div className="mt-3">
@@ -130,7 +131,10 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
             <Delete id={prop}/>
         </Route>
     </Switch>
-    
+    <Route path="/modify">
+        {/* <Modify/> */}
+
+    </Route>
       </Router>
 
     )
