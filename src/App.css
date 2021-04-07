@@ -230,7 +230,7 @@ i {
 }
 
 #navbar{
-	width: 100%;
+	width: 101%;
 }
 
 /* #a{
@@ -363,7 +363,8 @@ Styling for dropdown list on navbar */
   }
 
   #searcherror{
-	 margin-left: 350px;
+	 margin-left: 250px;
+	 background-color: black;
   }
 
- 
+

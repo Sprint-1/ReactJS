@@ -2,8 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Body from './body/Body'
 import FetchList from './scheduingModule/FetchList';
+import Modify from './scheduingModule/Modify';
 import ScheduleForm from './scheduingModule/ScheduleForm'
 import Search from './scheduingModule/Search'
+import ModifyActions from './scheduingModule/ModifyActions'
 
  function Header()
  {
@@ -64,6 +66,9 @@ import Search from './scheduingModule/Search'
           <Route path="/">
             <Sample/>
           </Route>*/}
+          <Route path="/modify" > 
+          <Modify />
+          </Route>
 
           <Route path="/search">
             <Search/>
@@ -76,6 +81,10 @@ import Search from './scheduingModule/Search'
           <Route path="/schedulingModule">
             <ScheduleForm />
           </Route> 
+
+          <Route path="/modifyactions" > 
+          <ModifyActions />
+          </Route>
 
           <Route path="/">
               <Body />

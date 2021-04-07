@@ -5,10 +5,14 @@ import {fetchAllSFlightsAction } from '../../redux/SFlightActions'
 import Footer from '../Footer'
 import Delete from './Delete'
 import Modify from './Modify'
+import { useHistory } from "react-router-dom";
 
 
 function FetchList({getFlightList,fetchAllSFlightsAction})
 {
+    const history = useHistory();
+
+
     let [del,setDel]=useState(0)
     let [prop,setProp]=useState("0")
     
@@ -35,6 +39,23 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
             elements[i].style.width = "50%";
           }
 
+    }
+
+
+   
+    function handledit(f) {
+
+        if(f.flight.seatCapacity!=f.availableSeats)
+        {
+            alert("Passengers already booked this flight")
+        }
+        else{
+        history.push({
+            pathname: '/modify',
+            state:f
+            
+      },)
+    }
     }
 
    
@@ -66,8 +87,17 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                     getFlightList &&
                     getFlightList.fAllFlights &&
                     getFlightList.fAllFlights.map(f=>
+                        <>
+                         <Switch>
+        <Route path="/delete">
+            <Delete id={prop}/>
+        </Route>
+        <Route path="/modify">
+            <Modify/>
+        </Route>
+    </Switch>
+    
                         <div id="col" className="column bg-white border border-tomato">
-                        
                         <table className="table table-stripped">
                         <thead>
                              <tr className="table-danger">
@@ -83,11 +113,11 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                                     <td scope="col" rowSpan="3">
                                         <div className="mt-2" >
                                           
-                                        <Link to="/modify" className="btn btn-warning" id="editbtn"> Edit</Link>
+                                        <button  className="btn btn-warning" id="editbtn" onClick={()=>handledit(f)}> Edit</button>
                                               
                                         </div>
                                         <div className="mt-3">
-                                          <Link to="/delete" className="btn btn-danger" 
+                                          <Link to="/delete" className="btn btn-danger" id="deletebtn"
                                           onClick={() => {
                                           
 
@@ -118,23 +148,15 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                         </table>
                    
                         </div>
+                        </>
                     )
                 }
            
        
       </div>
 
-      
       </div>
-    <Switch>
-        <Route path="/delete">
-            <Delete id={prop}/>
-        </Route>
-    </Switch>
-    <Route path="/modify">
-        {/* <Modify/> */}
-
-    </Route>
+   
       </Router>
 
     )

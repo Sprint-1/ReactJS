@@ -97,14 +97,14 @@ function ScheduleForm({addFlight,scheduleFlightAction})
       if(fcarriername.length<3)
       {
         error.innerHTML="Carrier Name must be minimum 3 char"
-        document.getElementById("cn").focus()
+        
        
        
       }
       else if(fmodelname.length<3)
       {
         error.innerHTML="Model Name must be minimum 3 char"
-        document.getElementById("fm").focus()
+    
         
       }
       else if(fsourceairport==fdestinationairport || fsourceairport=="select" || fdestinationairport=="select")
@@ -207,7 +207,7 @@ function ScheduleForm({addFlight,scheduleFlightAction})
   </div>
 
  
-  <div class="form-outline mb-2">
+  <div className="form-outline mb-2">
   <select name = "sourceairport" className="form-control" onInput={formValidate}   value={sForm.schedule.srcAirport} onChange={e => setSForm({...sForm,schedule:{...sForm.schedule,srcAirport : e.target.value}})}>
             <option value = "select" >--Select Airport--</option>
             <option value = "INDIARGIA" >Hyderabad</option>
@@ -221,7 +221,7 @@ function ScheduleForm({addFlight,scheduleFlightAction})
   </div>
 
  
-  <div class="form-outline mb-2">
+  <div className="form-outline mb-2">
   <select name = "destinationairport" className="form-control" onInput={formValidate}  value={sForm.schedule.dstnAirport} onChange={e => setSForm({...sForm,schedule:{...sForm.schedule,dstnAirport : e.target.value}})}>
             <option value = "select" >--Select Airport--</option>
             <option value = "INDIARGIA" >Hyderabad</option>
@@ -287,16 +287,16 @@ function ScheduleForm({addFlight,scheduleFlightAction})
   
 <div className="text-danger" >
 
-  <p id="error"></p>
+  <p id="error" style={{backgroundColor:"black"}}></p>
 
 </div>
 <div className="row btn-group">
   <div className="btn">
-      <input type="submit" value="" id="formsubmit"  disabled onClick={formValidate}/>
+      {/* <input type="submit" value="" id="formsubmit"  disabled onClick={formValidate}/> */}
   </div>
   <div className="text-warning">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="error1">  Edit form to submit</p>
+    <p id="error1" style={{backgroundColor:"black"}}>  Edit form to submit</p>
   </div>
   </div>
       </form>

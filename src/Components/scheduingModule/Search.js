@@ -65,7 +65,7 @@ function Search()
 
  <div className="row ">
   <div class="form-outline m-1 ml-5 ">
-  <select name = "sourceairport" className="form-control" value={cred.src} onInput={fromvalidate} onChange={e=>setCred({...cred,src:e.target.value})}>
+  <select name = "sourceairport" className="form-control" value={cred.src} required={true} onInput={fromvalidate} onChange={e=>setCred({...cred,src:e.target.value})}>
             <option value = "select" >--Select Airport--</option>
             <option value = "INDIARGIA" >Hyderabad</option>
             <option value = "INDIAKGIA">Bangalore</option>
@@ -79,7 +79,7 @@ function Search()
 
  
   <div class="form-outline m-1 ">
-  <select name = "destinationairport" className="form-control" value={cred.dstn} onInput={fromvalidate} onChange={e=>setCred({...cred,dstn:e.target.value})}>
+  <select name = "destinationairport" className="form-control" required={true} value={cred.dstn} onInput={fromvalidate} onChange={e=>setCred({...cred,dstn:e.target.value})}>
             <option value = "select" >--Select Airport--</option>
             <option value = "INDIARGIA" >Hyderabad</option>
             <option value = "INDIAKGIA">Bangalore</option>
@@ -94,7 +94,7 @@ function Search()
   <div className="row mt-1">
     <div className="col">
       <div className="form-outline">
-        <input type="date"  name="departuredate" value={cred.date} onInput={fromvalidate} onChange={e=>setCred({...cred,date:e.target.value})} className="form-control" />
+        <input type="date"  name="departuredate" value={cred.date} required={true} onInput={fromvalidate} onChange={e=>setCred({...cred,date:e.target.value})} className="form-control" />
         <label className="form-label">Departure Date</label>
       </div>
   
@@ -106,7 +106,7 @@ function Search()
        </div>
   <div className="text-warning ">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="searcherror" >  Edit form to submit</p>
+    <p id="searcherror" >Edit form to submit</p>
   </div>
       </div>
 

@@ -4,8 +4,6 @@ import {searchforFlightAction} from '../../redux/SFlightActions'
 
 function SearchActions({searchFlight,searchforFlightAction,credentials})
 {
-    
-    
 
      useEffect(()=>
      {
