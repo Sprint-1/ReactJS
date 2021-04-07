@@ -3,8 +3,8 @@ import './App.css';
 import {Provider} from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Header from './Components/Header'
-import store from './redux/store'
-import Modify from './Components/scheduingModule/Modify';
+import store from './redux/Store'
+
 
 
 

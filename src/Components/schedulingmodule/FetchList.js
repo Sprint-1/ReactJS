@@ -81,14 +81,7 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
       </div>
       </div>
 
-      <div id="row" className="container mt-1 ">
-           
-                {
-                    getFlightList &&
-                    getFlightList.fAllFlights &&
-                    getFlightList.fAllFlights.map(f=>
-                        <>
-                         <Switch>
+      <Switch>
         <Route path="/delete">
             <Delete id={prop}/>
         </Route>
@@ -96,6 +89,15 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
             <Modify/>
         </Route>
     </Switch>
+
+      <div id="row" className="container mt-1 ">
+           
+                {
+                    getFlightList &&
+                    getFlightList.fAllFlights &&
+                    getFlightList.fAllFlights.map(f=>
+                        <>
+                       
     
                         <div id="col" className="column bg-white border border-tomato">
                         <table className="table table-stripped">
@@ -134,7 +136,7 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                                         </td> 
                               </tr>
                             <tr>
-                                 <th scope="row">CarrierName: {f.flight.carrierName}</th>
+                                 <th scope="row"> {f.flight.carrierName}</th>
                                   <td className="font-weight-bold">{f.schedule.deptDate}</td>
                         
                                 </tr>

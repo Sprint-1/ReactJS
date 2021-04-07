@@ -1,0 +1,11 @@
+//Actions for fetching all Airports
+
+export const FETCH_AIRPORT_REQUEST = 'FETCH_AIRPORT_REQUEST'
+export const FETCH_AIRPORT_SUCCESS = 'FETCH_AIRPORT_SUCCESS'
+export const FETCH_AIRPORT_FAILURE = 'FETCH_AIRPORT_FAILURE'
+
+//Actions for adding an Airport.
+
+export const AIRPORT_REQUEST = 'AIRPORT_REQUEST'
+export const AIRPORT_SUCCESS = 'AIRPORT_SUCCESS'
+export const AIRPORT_FAILURE = 'AIRPORT_FAILURE'

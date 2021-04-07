@@ -1,7 +1,7 @@
 import react, { useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import {fetchAllFlightsAction } from '../../redux/ReduxFlight/FlightAction'
+import {fetchAllFlightsAction } from '../../redux/reduxflight/FlightAction'
 import Footer from '../Footer'
 // import Delete from './Delete'
 
@@ -70,7 +70,7 @@ function GetList({flightsList,fetchAllFlightsAction})
                         <table className="table table-stripped">
                         <thead>
                              <tr className="table-danger">
-                                 <th scope="col" >ID:{f.flightNumber}</th>                              
+                                 <th scope="col" >Flight ID:{f.flightNumber}</th>                              
                             </tr>
                          </thead>
                          <tbody>
@@ -100,12 +100,12 @@ function GetList({flightsList,fetchAllFlightsAction})
                                         </td> 
                               </tr>
                             <tr>
-                                 <th scope="row">CarrierName: {f.carrierName}</th>
+                                 <th scope="row">{f.carrierName}</th>
                                   
                         
                                 </tr>
                             <tr>
-                                 <th scope="row">Seats: {f.seatCapacity}</th>
+                                 <th scope="row">Seats : {f.seatCapacity}</th>
                                  
      
                              </tr>

@@ -33,10 +33,10 @@ function Delete({deleteFlight,deleteaSFlightAction,p})
     return deleteFlight.loading ? (
         <></>
       ) : deleteFlight.error ? (
-         <div  className="alert alert-danger" role="alert">{deleteFlight.error} </div> 
+         <div  className="alert alert-danger" role="alert"> {deleteFlight.error} </div> 
       
       ) : (
-        <div  className="alert alert-success" role="alert">Flight with ID : {p} {deleteFlight.dFlight}  Refresh to see Changes </div>
+        <div  className="alert alert-success" role="alert">Flight with ID : {p} {deleteFlight.dFlight} </div>
     )
 }
 const mapStateToProps=(state,props)=>{

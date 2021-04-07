@@ -1,6 +1,6 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
-import {FlightAction } from '../../redux/ReduxFlight/FlightAction'
+import {FlightAction } from '../../redux/reduxflight/FlightAction'
 
 
 

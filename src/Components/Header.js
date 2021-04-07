@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Body from './body/Body'
-import FetchList from './scheduingModule/FetchList';
-import Modify from './scheduingModule/Modify';
-import ScheduleForm from './scheduingModule/ScheduleForm'
-import Search from './scheduingModule/Search'
-import ModifyActions from './scheduingModule/ModifyActions'
-import GetList from'./FlightModule/GetList'
-import AddFlight from './FlightModule/AddFlight'
+import FetchList from './schedulingmodule/FetchList';
+import Modify from './schedulingmodule/Modify';
+import ScheduleForm from './schedulingmodule/ScheduleForm'
+import Search from './schedulingmodule/Search'
+import ModifyActions from './schedulingmodule/ModifyActions'
+import GetList from'./flightmodule/GetList'
+import AddFlight from './flightmodule/AddFlight'
+import AirportsList from './airportmodule/AirportsList';
 
  function Header()
  {
@@ -29,6 +30,13 @@ import AddFlight from './FlightModule/AddFlight'
                             <div className="dropdown-content">
                                <Link to="/addflight">Add Flight</Link>
                                 <Link to="/flightslist">All Flights</Link>
+                             </div>
+            </div>
+            <div className="dropdown ">
+                    <button className="dropbtn w3-btn w3-round-xlarge">Airport</button>
+                            <div className="dropdown-content">
+                               <Link to="/addairport">Add Airport</Link>
+                                <Link to="/airportslist">All Airports</Link>
                              </div>
             </div>
             <div className="dropdown ">
@@ -66,6 +74,10 @@ import AddFlight from './FlightModule/AddFlight'
 
           <Route path="/flightslist">
             <GetList/>
+          </Route>
+
+          <Route path="/airportslist">
+            <AirportsList/>
           </Route>
 
           <Route path="/modify" > 
