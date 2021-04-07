@@ -17,7 +17,7 @@ import {
     error: ''
   }
 
-  export const scheduleFlightReducer = (state = scheduleFlight, action) => {
+  export const scheduleSFlightReducer = (state = scheduleFlight, action) => {
     switch (action.type) {
       case SFLIGHT_REQUEST:
         return {
@@ -49,7 +49,7 @@ const fetchSFlight = {
     error: ''
   }
 
-export const fetchFlightReducer = (state = fetchSFlight, action) => {
+export const fetchSFlightReducer = (state = fetchSFlight, action) => {
     switch (action.type) {
       case FETCH_SFLIGHT_REQUEST:
         return {
@@ -81,7 +81,7 @@ export const fetchFlightReducer = (state = fetchSFlight, action) => {
     error: ''
   }
 
-  export const fetchAllFlightsReducer = (state = fetchAllSFlights, action) => {
+  export const fetchAllSFlightsReducer = (state = fetchAllSFlights, action) => {
     switch (action.type) {
       case FETCH_SFLIGHTS_REQUEST:
         return {

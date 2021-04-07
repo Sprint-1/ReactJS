@@ -6,6 +6,8 @@ import Modify from './scheduingModule/Modify';
 import ScheduleForm from './scheduingModule/ScheduleForm'
 import Search from './scheduingModule/Search'
 import ModifyActions from './scheduingModule/ModifyActions'
+import GetList from'./FlightModule/GetList'
+import AddFlight from './FlightModule/AddFlight'
 
  function Header()
  {
@@ -22,20 +24,19 @@ import ModifyActions from './scheduingModule/ModifyActions'
             <Link className="nav-link active font-weight-bolder text-white" aria-current="page" to="/">
                 Home
            </Link>
-            <div className="dropdown ">
-                    <button className="dropbtn w3-btn w3-round-xlarge">Schedule</button>
+           <div className="dropdown ">
+                    <button className="dropbtn w3-btn w3-round-xlarge">Flight</button>
                             <div className="dropdown-content">
-                               <Link to="/schedulingModule">Schedule Flight</Link>
-                                <Link to="/">View</Link>
-                                <Link to="/SFlightsListModule">view All</Link>
+                               <Link to="/addflight">Add Flight</Link>
+                                <Link to="/flightslist">All Flights</Link>
                              </div>
             </div>
             <div className="dropdown ">
                     <button className="dropbtn w3-btn w3-round-xlarge">Schedule</button>
                             <div className="dropdown-content">
-                               <Link to="/schedulingModule">Schedule Flight</Link>
+                               <Link to="/scheduleflight">Schedule Flight</Link>
                                 <Link to="/search">Search</Link>
-                                <Link to="/SFlightsListModule">view All</Link>
+                                <Link to="/scheduledflightslist">view All</Link>
                              </div>
             </div>
           
@@ -59,13 +60,14 @@ import ModifyActions from './scheduingModule/ModifyActions'
         <div >
          
         <Switch>
-         {/* <Route path="/">
-            <Sample />
+          <Route path="/addflight">
+            <AddFlight />
           </Route>
 
-          <Route path="/">
-            <Sample/>
-          </Route>*/}
+          <Route path="/flightslist">
+            <GetList/>
+          </Route>
+
           <Route path="/modify" > 
           <Modify />
           </Route>
@@ -74,11 +76,11 @@ import ModifyActions from './scheduingModule/ModifyActions'
             <Search/>
           </Route> 
 
-           <Route path="/SFlightsListModule">
+           <Route path="/scheduledflightslist">
             <FetchList />
           </Route>
 
-          <Route path="/schedulingModule">
+          <Route path="/scheduleflight">
             <ScheduleForm />
           </Route> 
 

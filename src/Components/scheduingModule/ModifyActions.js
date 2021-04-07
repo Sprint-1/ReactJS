@@ -21,7 +21,7 @@ function ModifyActions({updateSFlight,updateaSFlightAction,prop})
     {
         alert("Updated Successfully")
         history.push({
-            pathname:"/SFlightsListModule"
+            pathname:"/scheduledflightslist"
         })
 
         window.location.reload(false)

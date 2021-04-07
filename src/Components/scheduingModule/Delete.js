@@ -23,7 +23,7 @@ function Delete({deleteFlight,deleteaSFlightAction,p})
      
    
      history.push({
-         pathname:"/SFlightsListModule"
+         pathname:"/scheduledflightslist"
      })
 
      window.location.reload(false)

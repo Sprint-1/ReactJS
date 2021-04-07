@@ -1,20 +1,34 @@
 import { combineReducers } from 'redux'
-import  {fetchAllFlightsReducer,
-  fetchFlightReducer,
-  scheduleFlightReducer,
+import  {fetchAllSFlightsReducer,
+  fetchSFlightReducer,
+  scheduleSFlightReducer,
   searchscheduleFlightReducer,
   updatescheduleFlightReducer,
   deletescheduleFlightReducer} from './SFlightReducers'
 
 
+import  {fetchAllFghtsReducer,
+    fetchFghtReducer,
+    addFlightsReducer,
+    updateFghtReducer,
+    deleteFghtReducer} from '../redux/ReduxFlight/FlightReducer'
+
+
 const rootReducer = combineReducers({
   
-  scheduleF: scheduleFlightReducer,
+  scheduleF: scheduleSFlightReducer,
   updateF:updatescheduleFlightReducer,
   searchF: searchscheduleFlightReducer,
   deleteF: deletescheduleFlightReducer,
-  fetchF: fetchFlightReducer,
-  fetchAllF: fetchAllFlightsReducer
+  fetchF: fetchSFlightReducer,
+  fetchAllF: fetchAllSFlightsReducer,
+
+
+  addFlight: addFlightsReducer,
+  updateFlight: updateFghtReducer,
+  deleteFght: deleteFghtReducer,
+  fetchFlight: fetchFghtReducer,
+  fetchAllFlight: fetchAllFghtsReducer
 
 });
 
