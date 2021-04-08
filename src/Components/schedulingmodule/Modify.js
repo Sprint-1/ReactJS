@@ -3,6 +3,7 @@ import {useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import ModifyActions from './ModifyActions';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import Header from '../Header';
 
 function Modify()
 {
@@ -107,6 +108,7 @@ function Modify()
 
     return(
         <Router>
+          <Header/>
         <div id="sform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>

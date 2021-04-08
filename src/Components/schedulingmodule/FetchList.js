@@ -13,7 +13,6 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
 {
     const history = useHistory();
 
-
     let [del,setDel]=useState(0)
     let [prop,setProp]=useState("0")
     
@@ -93,9 +92,7 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
         <Route path="/delete">
             <Delete id={prop}/>
         </Route>
-        <Route path="/modify">
-            <Modify/>
-        </Route>
+       
     </Switch>
 
       <div id="row" className="container mt-1 ">

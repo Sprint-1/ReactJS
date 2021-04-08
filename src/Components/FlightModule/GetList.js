@@ -5,12 +5,15 @@ import {fetchAllFlightsAction } from '../../redux/reduxflight/FlightAction'
 import Footer from '../Footer'
 import Header from '../Header'
 import Delete from './Delete'
+import { useHistory } from "react-router-dom";
 
 
 function GetList({flightsList,fetchAllFlightsAction})
 {
     let [del,setDel]=useState(0)
     let [prop,setProp]=useState(0)
+
+    const history=useHistory()
     
     useEffect(()=>
         {
@@ -37,7 +40,17 @@ function GetList({flightsList,fetchAllFlightsAction})
 
     }
 
-   
+    function handledit(flight) {
+
+        
+        history.push({
+            pathname: '/modifyflightactions',
+            state:flight
+            
+      },)
+    
+    }
+
 
     return flightsList.loading ? (
         <>
@@ -77,22 +90,22 @@ function GetList({flightsList,fetchAllFlightsAction})
                 {
                     flightsList &&
                     flightsList.fAllFlights &&
-                    flightsList.fAllFlights.map(f=>
+                    flightsList.fAllFlights.map(flight=>
                         <div id="col" className="column bg-white border border-tomato">
                         
                         <table className="table table-stripped">
                         <thead>
                              <tr className="table-danger">
-                                 <th scope="col" >Flight ID:{f.flightNumber}</th>                              
+                                 <th scope="col" >Flight ID:{flight.flightNumber}</th>                              
                             </tr>
                          </thead>
                          <tbody>
                               <tr>
-                                  <th scope="row">FlightNo. {f.flightNumber}</th>
+                                  <th scope="row">FlightNo. {flight.flightNumber}</th>
                                     <td scope="col" rowSpan="3">
                                         <div className="mt-2" >
                                           
-                                        <button className="btn btn-warning" id="editbtn"> Edit</button>
+                                        <button className="btn btn-warning" id="editbtn" onClick={()=>handledit(flight)}> Edit</button>
                                               
                                         </div>
                                         <div className="mt-3">
@@ -102,7 +115,7 @@ function GetList({flightsList,fetchAllFlightsAction})
 
                                             if(window.confirm("Confirm to delete"))
                                             {
-                                                setProp(f.flightNumber)
+                                                setProp(flight.flightNumber)
               
                                             }
                                             
@@ -113,12 +126,12 @@ function GetList({flightsList,fetchAllFlightsAction})
                                         </td> 
                               </tr>
                             <tr>
-                                 <th scope="row">{f.carrierName}</th>
+                                 <th scope="row">{flight.carrierName}</th>
                                   
                         
                                 </tr>
                             <tr>
-                                 <th scope="row">Seats : {f.seatCapacity}</th>
+                                 <th scope="row">Seats : {flight.seatCapacity}</th>
                                  
      
                              </tr>

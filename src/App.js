@@ -12,6 +12,13 @@ import ModifyActions from './Components/schedulingmodule/ModifyActions'
 import GetList from'./Components/flightmodule/GetList'
 import AddFlight from './Components/flightmodule/AddFlight'
 import AirportsList from './Components/airportmodule/AirportsList';
+import SignUp from './Components/usermodule/SignUp'
+import Home from './Components/Home'
+import SignUpAction from './Components/usermodule/SignUpAction'
+import Login from './Components/usermodule/Login';
+import AddAirport from './Components/airportmodule/AddAirport';
+import ModifyFlight from './Components/flightmodule/ModifyFlight';
+import ModifyFlightAction from './Components/flightmodule/ModifyFlightAction';
 
 
 
@@ -24,7 +31,9 @@ function App() {
       <Switch>
 
         <Route exact path="/"  component={Body}/>
-        <Route exact path="/addflight" component={AddFlight }/>
+
+        {/* <Route exact path="/" component={Home}/> */}
+        <Route  path="/addflight" component={AddFlight }/>
         <Route path="/flightslist" component={GetList}/>
         <Route path="/airportslist" component={AirportsList}/>
 
@@ -37,7 +46,18 @@ function App() {
           <Route path="/scheduleflight" component={ScheduleForm} />
 
           <Route path="/modifyactions" component={ModifyActions }/>
+         
+          <Route path="/signupactions" component={SignUpAction} />
+    
+          <Route path="/signup" component={SignUp}/>
         
+          <Route path="/login" component={Login}/>
+
+          <Route path="/addairport" component={AddAirport}/>
+
+          <Route path="/modifyflight" component={ModifyFlight}/>
+
+        <Route path="/modifyflightactions" component={ModifyFlightAction}/>
       </Switch>
      
     </div>

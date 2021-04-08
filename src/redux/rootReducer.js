@@ -15,6 +15,10 @@ import  {fetchAllFghtsReducer,
 
 import {
       airportReducer,fetchAllAirportsReducer} from './reduxairport/AirportReducers'
+
+
+
+ import {addUserReducer,deleteUserReducer,updateUserReducer,loginUserReducer} from './reduxuser/UserReducers'     
   
 
 
@@ -36,7 +40,13 @@ const rootReducer = combineReducers({
 
 
   scheduleA: airportReducer,
-  fetchAllA: fetchAllAirportsReducer
+  fetchAllA: fetchAllAirportsReducer,
+
+
+  addU:addUserReducer,
+  deleteU:deleteUserReducer,
+  updateU:updateUserReducer,
+  loginU:loginUserReducer
 
 });
 
