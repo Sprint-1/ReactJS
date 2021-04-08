@@ -1,6 +1,7 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {scheduleFlightAction } from '../../redux/SFlightActions'
+import Header from '../Header'
 
 
 
@@ -181,7 +182,8 @@ function ScheduleForm({addFlight,scheduleFlightAction})
 
 
     return(
-
+<>
+<Header/>
         <div id="sform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
@@ -303,7 +305,7 @@ function ScheduleForm({addFlight,scheduleFlightAction})
       </div>
       </div>
       </div>
-        
+        </>
     )
 }
 

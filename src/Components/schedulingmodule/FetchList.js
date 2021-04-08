@@ -6,6 +6,7 @@ import Footer from '../Footer'
 import Delete from './Delete'
 import Modify from './Modify'
 import { useHistory } from "react-router-dom";
+import Header from '../Header'
 
 
 function FetchList({getFlightList,fetchAllSFlightsAction})
@@ -61,11 +62,18 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
    
 
     return getFlightList.loading ? (
+        <>
+        <Header/>
         <h2>Loading</h2>
+        </>
       ) : getFlightList.error ? (
+          <>
+          <Header/>
         <h2 className='text-danger'>{getFlightList.error}</h2>
+        </>
       ) : (
           <Router>
+              <Header/>
           <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
      <div id="marq">
      <marquee className="text-dark"> Booked Flights can not be modified and deleted</marquee>
@@ -113,7 +121,8 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                                   <th scope="row">FlightNO. {f.flight.flightNumber}</th>
                                     <td className="font-weight-bold">{f.schedule.srcAirport} -{'>'} {f.schedule.dstnAirport}</td>
                                     <td scope="col" rowSpan="3">
-                                        <div className="mt-2" >
+                {  (f.flight.seatCapacity===f.availableSeats)?(
+                                        <><div className="mt-2" >
                                           
                                         <button  className="btn btn-warning" id="editbtn" onClick={()=>handledit(f)}> Edit</button>
                                               
@@ -132,8 +141,27 @@ function FetchList({getFlightList,fetchAllSFlightsAction})
                                             }}
                                         >
                                            Delete</Link>    
-                                        </div>
-                                        </td> 
+                                        </div>   </>
+                 ): ( <><div className="mt-2" >
+                                          
+                 <button  className="btn btn-warning" id="editbtn" disabled onClick={()=>handledit(f)}> Edit</button>
+                       
+                 </div>
+                 <div className="mt-3">
+                   <Link to="/delete" className="btn btn-danger" style={{pointerEvents:"none"}} id="deletebtn"
+                   onClick={() => {
+                   
+
+                     if(window.confirm("Confirm to delete"))
+                     {
+                         setProp(f.scheduleFlightId)
+
+                     }
+                     
+                     }}
+                 >
+                    Delete</Link>    
+                 </div>   </>) }  </td>  
                               </tr>
                             <tr>
                                  <th scope="row"> {f.flight.carrierName}</th>

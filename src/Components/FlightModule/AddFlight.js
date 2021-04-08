@@ -1,6 +1,7 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {FlightAction } from '../../redux/reduxflight/FlightAction'
+import Header from '../Header'
 
 
 
@@ -119,7 +120,8 @@ function AddFlight({addFlight,FlightAction})
 
 
     return(
-
+<>
+<Header/>
         <div id="fform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
@@ -175,6 +177,7 @@ function AddFlight({addFlight,FlightAction})
       </div>
       </div>
       </div>
+      </>
         
     )
 }

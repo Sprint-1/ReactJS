@@ -2,6 +2,7 @@ import react, { useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import {fetchAllAirportsAction } from '../../redux/reduxairport/AirportActoins'
+import Header from '../Header'
 
 
 
@@ -40,11 +41,18 @@ function AirportsList({getAirportList,fetchAllAirportsAction})
    
 
     return getAirportList.loading ? (
+        <>
+        <Header/>
         <h2>Loading</h2>
+        </>
       ) : getAirportList.error ? (
+          <>
+          <Header/>
         <h2 className='text-danger'>{getAirportList.error}</h2>
+        </>
       ) : (
           <Router>
+              <Header/>
           <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
          <div id="btnContainer" className="container-fluid" >
             <div className="container  col-sm-9" style={{ backgroundColor: "#acb6e5"}}>

@@ -109,7 +109,7 @@ export const fetchFghtReducer = (state = fetchFlight, action) => {
 
 const deleteFlight = {
    loading: false,
-   dFlight: '',
+   dFlight: {},
    error: ''
  }
 
@@ -129,7 +129,7 @@ const deleteFlight = {
      case DELETE_FLIGHT_FAILURE:
        return {
          loading: false,
-         dFlight: '',
+         dFlight: {},
          error: action.payload
        }
      default: return state

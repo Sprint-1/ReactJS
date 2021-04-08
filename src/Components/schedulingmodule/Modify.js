@@ -20,7 +20,7 @@ function Modify()
             },
             availableSeats: location.state.flight.seatCapacity,
             schedule: {
-                scheduleId: location.state.schedule.scheduleFlightId,
+                scheduleId: location.state.schedule.scheduleId,
                 srcAirport: location.state.schedule.srcAirport,
                 dstnAirport: location.state.schedule.dstnAirport,
                 deptDate: location.state.schedule.deptDate,

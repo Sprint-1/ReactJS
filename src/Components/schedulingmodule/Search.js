@@ -1,17 +1,24 @@
-import react, { useState } from 'react'
+import react, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import Header from '../Header'
 import SearchActions from './SearchActions'
 
 import image from './searchflght.png'
 
 function Search()
 {
+
+  
+  
   const [cred,setCred]=useState({
     src:"INDIA",
     dstn:"INDIA",
     date:"2000-00-00"
   })
+
+
+
   
 
  function fromvalidate()
@@ -52,6 +59,8 @@ function Search()
 
     return(
       <Router>
+       
+        <Header/>
           <div id="search" className="container-fluid row" style={{height:"100vh"}}>
             <div className="col-sm-6" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
               

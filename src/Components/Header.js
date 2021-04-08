@@ -12,6 +12,7 @@ import AirportsList from './airportmodule/AirportsList';
 
  function Header()
  {
+ 
      return (
 
         <div className="bg">
@@ -22,29 +23,29 @@ import AirportsList from './airportmodule/AirportsList';
             <Link className="navbar-brand font-weight-bold" to="/">
               Fly Away
             </Link>
-            <Link className="nav-link active font-weight-bolder text-white" aria-current="page" to="/">
+            <a className="nav-link active font-weight-bolder text-white" aria-current="page" href="/">
                 Home
-           </Link>
+           </a>
            <div className="dropdown ">
                     <button className="dropbtn w3-btn w3-round-xlarge">Flight</button>
                             <div className="dropdown-content">
-                               <Link to="/addflight">Add Flight</Link>
-                                <Link to="/flightslist">All Flights</Link>
+                               <a href="/addflight">Add Flight</a>
+                                <a href="/flightslist">All Flights</a>
                              </div>
             </div>
             <div className="dropdown ">
                     <button className="dropbtn w3-btn w3-round-xlarge">Airport</button>
                             <div className="dropdown-content">
-                               <Link to="/addairport">Add Airport</Link>
-                                <Link to="/airportslist">All Airports</Link>
+                               <a href="/">Add Airport</a>
+                                <a href="/airportslist">All Airports</a>
                              </div>
             </div>
             <div className="dropdown ">
                     <button className="dropbtn w3-btn w3-round-xlarge">Schedule</button>
                             <div className="dropdown-content">
-                               <Link to="/scheduleflight">Schedule Flight</Link>
-                                <Link to="/search">Search</Link>
-                                <Link to="/scheduledflightslist">view All</Link>
+                               <a href="/scheduleflight">Schedule Flight</a>
+                                <a href="/search">Search</a>
+                                <a href="/scheduledflightslist">view All</a>
                              </div>
             </div>
           
@@ -67,43 +68,7 @@ import AirportsList from './airportmodule/AirportsList';
         
         <div >
          
-        <Switch>
-          <Route path="/addflight">
-            <AddFlight />
-          </Route>
-
-          <Route path="/flightslist">
-            <GetList/>
-          </Route>
-
-          <Route path="/airportslist">
-            <AirportsList/>
-          </Route>
-
-          <Route path="/modify" > 
-          <Modify />
-          </Route>
-
-          <Route path="/search">
-            <Search/>
-          </Route> 
-
-           <Route path="/scheduledflightslist">
-            <FetchList />
-          </Route>
-
-          <Route path="/scheduleflight">
-            <ScheduleForm />
-          </Route> 
-
-          <Route path="/modifyactions" > 
-          <ModifyActions />
-          </Route>
-
-          <Route path="/">
-              <Body />
-          </Route>
-        </Switch>
+       
         </div>
       </Router>
       </div>

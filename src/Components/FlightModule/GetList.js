@@ -3,13 +3,14 @@ import {connect} from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import {fetchAllFlightsAction } from '../../redux/reduxflight/FlightAction'
 import Footer from '../Footer'
-// import Delete from './Delete'
+import Header from '../Header'
+import Delete from './Delete'
 
 
 function GetList({flightsList,fetchAllFlightsAction})
 {
     let [del,setDel]=useState(0)
-    let [prop,setProp]=useState(" ")
+    let [prop,setProp]=useState(0)
     
     useEffect(()=>
         {
@@ -39,11 +40,18 @@ function GetList({flightsList,fetchAllFlightsAction})
    
 
     return flightsList.loading ? (
+        <>
+        <Header/>
         <h2>Loading</h2>
+        </>
       ) : flightsList.error ? (
+          <>
+          <Header/>
         <h2 className='text-danger'>{flightsList.error}</h2>
+        </>
       ) : (
           <Router>
+              <Header/>
           <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
      <div id="marq">
      <marquee className="text-dark"> Booked Flights can not be modified and deleted</marquee>
@@ -58,7 +66,12 @@ function GetList({flightsList,fetchAllFlightsAction})
      
       </div>
       </div>
-
+      <Switch>
+        <Route path="/delete">
+            <Delete id={prop}/>
+        </Route>
+    </Switch>
+    
       <div id="row" className="container mt-1 ">
            
                 {
@@ -89,7 +102,7 @@ function GetList({flightsList,fetchAllFlightsAction})
 
                                             if(window.confirm("Confirm to delete"))
                                             {
-                                                setProp(f.flight.flightNumber)
+                                                setProp(f.flightNumber)
               
                                             }
                                             
@@ -122,12 +135,7 @@ function GetList({flightsList,fetchAllFlightsAction})
 
       
       </div>
-    {/* <Switch>
-        <Route path="/delete">
-            <Delete id={prop}/>
-        </Route>
-    </Switch> */}
-    
+   
       </Router>
 
     )
