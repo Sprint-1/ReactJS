@@ -59,10 +59,10 @@ const registerFailure = error => {
   }
 }
 
-const loginSuccess =message => {
+const loginSuccess =lUser => {
   return {
     type: LOGIN_SUCCESS,
-    payload:message
+    payload:lUser
   }
 }
 
@@ -82,8 +82,8 @@ export const loginAction = (userName,Password) => {
       .get(`http://localhost:9000/ftb/login/${userName}/${Password}`)
       .then(response => {
         // response.data is the users
-        const message= response.data
-        dispatch(loginSuccess(message))
+        const lUser= response.data
+        dispatch(loginSuccess(lUser))
       })
       .catch(error => {
         // error.message is the error message
@@ -172,8 +172,8 @@ export const deleteUserAction = (id) => {
       .delete(`http://localhost:9000/ftb/deleteUser/${id}`)
       .then(response => {
         // response.data is the users
-        const dFlight = response.data
-        dispatch(deleteUserSuccess(dFlight))
+        const dUser = response.data
+        dispatch(deleteUserSuccess(dUser))
       })
       .catch(error => {
         // error.message is the error message

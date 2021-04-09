@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 
- function Header()
+ function BookingHeader()
  {
  
      return (
@@ -15,29 +15,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
             <Link className="navbar-brand font-weight-bold" to="/">
               Fly Away
             </Link>
-            <a className="nav-link active font-weight-bolder text-white" aria-current="page" href="/body">
+            <a className="nav-link active font-weight-bolder text-white" aria-current="page" href="/booking">
                 Home
            </a>
-           <div className="dropdown ">
-                    <button className="dropbtn w3-btn w3-round-xlarge">Flight</button>
-                            <div className="dropdown-content">
-                               <a href="/addflight">Add Flight</a>
-                                <a href="/flightslist">All Flights</a>
-                             </div>
-            </div>
+          
             <div className="dropdown ">
-                    <button className="dropbtn w3-btn w3-round-xlarge">Airport</button>
+                    <button className="dropbtn w3-btn w3-round-xlarge">Booking</button>
                             <div className="dropdown-content">
-                               <a href="/addairport">Add Airport</a>
-                                <a href="/airportslist">All Airports</a>
-                             </div>
-            </div>
-            <div className="dropdown ">
-                    <button className="dropbtn w3-btn w3-round-xlarge">Schedule</button>
-                            <div className="dropdown-content">
-                               <a href="/scheduleflight">Schedule Flight</a>
-                                <a href="/search">Search</a>
-                                <a href="/scheduledflightslist">view All</a>
+                                <a href="/searchflights">Search</a>
+                                <a href="/mybookings">MyBookings</a>
                              </div>
             </div>
           
@@ -68,4 +54,4 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
      )
  }
 
- export default Header;
+ export default BookingHeader;

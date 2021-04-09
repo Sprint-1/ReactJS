@@ -1,0 +1,43 @@
+
+//Actions for fetching all bookings.
+
+export const FETCH_BOOKINGS_REQUEST = 'FETCH_BOOKINGS_REQUEST'
+export const FETCH_BOOKINGS_SUCCESS = 'FETCH_BOOKINGS_SUCCESS'
+export const FETCH_BOOKINGS_FAILURE = 'FETCH_BOOKINGS_FAILURE'
+
+//Actions for fetching booking by id.
+
+export const FETCH_BOOKING_REQUEST = 'FETCH_BOOKING_REQUEST'
+export const FETCH_BOOKING_SUCCESS = 'FETCH_BOOKING_SUCCESS'
+export const FETCH_BOOKING_FAILURE = 'FETCH_BOOKING_FAILURE'
+
+//Actions for booking a flight.
+
+export const BOOKING_REQUEST = 'BOOKING_REQUEST'
+export const BOOKING_SUCCESS = 'BOOKING_SUCCESS'
+export const BOOKING_FAILURE = 'BOOKING_FAILURE'
+
+//Actions for deleting a booking.
+
+export const DELETE_BOOKING_REQUEST = 'DELETE_BOOKING_REQUEST'
+export const DELETE_BOOKING_SUCCESS = 'DELETE_BOOKING_SUCCESS'
+export const DELETE_BOOKING_FAILURE = 'DELETE_BOOKING_FAILURE'
+
+//Actions for updating a booking.
+
+export const UPDATE_BOOKING_REQUEST = 'UPDATE_SFLIGHT_REQUEST'
+export const UPDATE_BOOKING_SUCCESS = 'UPDATE_SFLIGHT_SUCCESS'
+export const UPDATE_BOOKING_FAILURE = 'UPDATE_SFLIGHT_FAILURE'
+
+// Actions for searching a flight based on source ,destination airports
+
+export const SEARCH_SFLIGHT_REQUEST = 'SEARCH_SFLIGHT_REQUEST'
+export const SEARCH_SFLIGHT_SUCCESS = 'SEARCH_SFLIGHT_SUCCESS'
+export const SEARCH_SFLIGHT_FAILURE = 'SEARCH_SFLIGHT_FAILURE'
+
+
+
+
+
+
+

@@ -111,7 +111,7 @@ const updateUser = {
 
 const loginUser = {
     loading: false,
-    message: '',
+    lUser: {},
     error: ''
   }
  
@@ -125,13 +125,13 @@ const loginUser = {
       case LOGIN_SUCCESS:
         return {
           loading: false,
-          message: action.payload,
+          lUser: action.payload,
           error: ''
         }
       case LOGIN_FAILURE:
         return {
           loading: false,
-          message: '',
+          lUser: {},
           error: action.payload
         }
       default: return state

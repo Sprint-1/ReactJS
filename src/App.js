@@ -19,6 +19,12 @@ import Login from './Components/usermodule/Login';
 import AddAirport from './Components/airportmodule/AddAirport';
 import ModifyFlight from './Components/flightmodule/ModifyFlight';
 import ModifyFlightAction from './Components/flightmodule/ModifyFlightAction';
+import LoginAction from './Components/usermodule/LoginAction';
+import HomeBooking from './Components/bookingmodule/HomeBooking';
+import SearchFlightAction from './Components/bookingmodule/SearchFlightAction'
+import SearchFlights from './Components/bookingmodule/SearchFlights'
+import MyBookings from './Components/bookingmodule/MyBookings';
+
 
 
 
@@ -30,9 +36,11 @@ function App() {
     <div className="App">
       <Switch>
 
-        <Route exact path="/"  component={Body}/>
+        <Route exact path="/body"  component={Body}/>
 
-        {/* <Route exact path="/" component={Home}/> */}
+        <Route exact path="/booking" component={HomeBooking}/>
+
+        <Route exact path="/" component={Home}/>
         <Route  path="/addflight" component={AddFlight }/>
         <Route path="/flightslist" component={GetList}/>
         <Route path="/airportslist" component={AirportsList}/>
@@ -41,6 +49,12 @@ function App() {
 
           <Route path="/search" component={Search} />
 
+          <Route path="/searchflightaction" component={SearchFlightAction}/>
+
+          <Route path="/searchflights" component={SearchFlights}/>
+
+          <Route path="/mybookings" component={MyBookings} />
+
            <Route path="/scheduledflightslist" component={FetchList}/>   
 
           <Route path="/scheduleflight" component={ScheduleForm} />
@@ -48,6 +62,8 @@ function App() {
           <Route path="/modifyactions" component={ModifyActions }/>
          
           <Route path="/signupactions" component={SignUpAction} />
+
+          <Route path="/loginactions" component={LoginAction} />
     
           <Route path="/signup" component={SignUp}/>
         

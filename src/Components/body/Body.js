@@ -5,7 +5,6 @@ import wallpaper from './background.png'
 
 function Body()
 {
-   
     return (
             <>
             <Header/>

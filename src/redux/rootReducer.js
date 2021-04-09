@@ -19,6 +19,14 @@ import {
 
 
  import {addUserReducer,deleteUserReducer,updateUserReducer,loginUserReducer} from './reduxuser/UserReducers'     
+
+
+ import  {
+  fetchAllBookingsReducer,
+  fetchBookingReducer,
+  bookingReducer,
+  updateBookingReducer,
+  deleteBookingReducer} from './reduxbooking/BookingReducers'
   
 
 
@@ -46,7 +54,16 @@ const rootReducer = combineReducers({
   addU:addUserReducer,
   deleteU:deleteUserReducer,
   updateU:updateUserReducer,
-  loginU:loginUserReducer
+  loginU:loginUserReducer,
+
+
+  
+  booking: bookingReducer,
+  updateB:updateBookingReducer,
+  deleteB: deleteBookingReducer,
+  fetchB: fetchBookingReducer,
+  fetchAllB: fetchAllBookingsReducer
+
 
 });
 
