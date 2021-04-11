@@ -115,7 +115,7 @@ function MyBookings({bookingsList,fetchAllBookingsAction})
                          <tbody>
                               <tr>
                                   <th scope="row">Flight No. {b.scheduledFlightId}</th>
-                                    <td className="font-weight-bold">Pasenger Name :{b.passengerList[0].passengerName}</td>
+                                    <td className="font-weight-bold">Pasenger Name :{b.passengerList.passengerName}</td>
                                     <td scope="col" rowSpan="3">
               
                                         <div className="mt-2" >
@@ -141,13 +141,13 @@ function MyBookings({bookingsList,fetchAllBookingsAction})
                                         </td>  
                               </tr>
                             <tr>
-                                 <th scope="row">Age : {b.passengerList[0].passengerAge}</th>
-                                  <td className="font-weight-bold">Passport ID: {b.passengerList[0].passengerUIN}</td>
+                                 <th scope="row">Age : {b.passengerList.passengerAge}</th>
+                                  <td className="font-weight-bold">Passport ID: {b.passengerList.passengerUIN}</td>
                         
                                 </tr>
                             <tr>
-                                 <th scope="row">Luggage: {b.passengerList[0].luggage} kgs</th>
-                                 <td className="font-weight-bold">PNR Number :{b.passengerList[0].pnrNumber}</td>
+                                 <th scope="row">Luggage: {b.passengerList.luggage} kgs</th>
+                                 <td className="font-weight-bold">PNR Number :{b.passengerList.pnrNumber}</td>
      
                              </tr>
                         </tbody>

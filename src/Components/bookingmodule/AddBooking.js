@@ -2,7 +2,9 @@ import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {useHistory, useLocation} from 'react-router-dom'
 import {bookingAction } from '../../redux/reduxbooking/BookingActions'
+import Footer from '../Footer'
 import BookingHeader from './BookingHeader'
+import homebg from '../pictures/homebg.jpg'
 
 
 function AddBooking({book,bookingAction})
@@ -10,6 +12,7 @@ function AddBooking({book,bookingAction})
 
     const location=useLocation()
 
+    console.log(location.state.id)
     const history=useHistory()
 
     const [bform,setbform]=useState(
@@ -18,7 +21,7 @@ function AddBooking({book,bookingAction})
             userName:sessionStorage.getItem("name"),
             bookingDate:"",
             passengerList: 
-            [
+            
                 {
                 luggage: 0,
                 pnrNumber: 0,
@@ -26,7 +29,7 @@ function AddBooking({book,bookingAction})
                 passengerAge: 0,
                 passengerUIN:""
             }
-        ],
+        ,
             ticketCost:0,
             scheduledFlightId:location.state.id,
             noOfPassengers:1
@@ -37,7 +40,7 @@ function AddBooking({book,bookingAction})
         bookingId: 0,
             userName:"",
             bookingDate:"",
-            passengerList: [
+            passengerList: 
                 {
                 luggage: 0,
                 pnrNumber: 0,
@@ -45,7 +48,7 @@ function AddBooking({book,bookingAction})
                 passengerAge: 0,
                 passengerUIN:""
             }
-        ],
+        ,
             ticketCost:0,
             scheduledFlightId:"",
             noOfPassengers:1
@@ -84,13 +87,7 @@ function AddBooking({book,bookingAction})
     }
 
 
-    function setAge(e)
-    {
-        let frm=[...bform]
-        let pasengers={...frm.passengerList[0]}
-        pasengers.passengerAge={...pasengers,passengerAge:e.target.value}
-        setbform(frm)
-    }
+   
 
     function formValidate()
     {
@@ -150,10 +147,13 @@ function AddBooking({book,bookingAction})
     return(
 <>
 <BookingHeader/>
-        <div id="bform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
+        <div id="bform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row content">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containerbform" className="col-sm-4 p-4" style={{borderRadius:"30px"}}>
 
                     <h4 className="font-weight-bold mb-2"> Booking Form </h4>
         <form >
@@ -172,13 +172,13 @@ function AddBooking({book,bookingAction})
   <div className="row mb-2">
     <div className="col">
       <div className="form-outline">
-        <input name="passengername" type="text"  id="form3Example3" onInput={formValidate} value={bform.passengerList[0].passengerName}  onChange={e => setbform({...bform,passengerList:{...bform.passengerList[0],passengerName : e.target.value}})} required={true} className="form-control" />
+        <input name="passengername" type="text"  id="form3Example3" onInput={formValidate} value={bform.passengerList.passengerName}  onChange={e => setbform({...bform,passengerList:{...bform.passengerList,passengerName : e.target.value}})} required={true} className="form-control" />
         <label className="form-label" >Passenger Name</label>
       </div>
     </div>
     <div className="col">
       <div className="form-outline">
-        <input name="passengerage" type="number" min="1" max="100"  id="form3Example4" onInput={formValidate} required={false} value={bform.passengerList[0].passengerAge}  onChange={e=>setAge(e)} className="form-control" />
+        <input name="passengerage" type="number" min="1" max="100"  id="form3Example4" onInput={formValidate} required={false} value={bform.passengerList.passengerAge}  onChange={e => setbform({...bform,passengerList:{...bform.passengerList,passengerAge : e.target.value}})} className="form-control" />
         <label className="form-label" >Passenger Age</label>
       </div>
     </div>
@@ -187,13 +187,13 @@ function AddBooking({book,bookingAction})
   <div className="row mb-2">
     <div className="col">
       <div class="form-outline mb-2">
-        <input name="passengeruin" type="number" min="100000000000"  onInput={formValidate} id="form3Example5" required={true} value={bform.passengerList[0].passengerUIN} onChange={e => setbform({...bform,passengerList:{...bform.passengerList,passengerUIN : e.target.value}})} class="form-control" />
+        <input name="passengeruin" type="number" min="100000000000"  onInput={formValidate} id="form3Example5" required={true} value={bform.passengerList.passengerUIN} onChange={e => setbform({...bform,passengerList:{...bform.passengerList,passengerUIN : e.target.value}})} class="form-control" />
         <label className="form-label" >Passenger UIN</label>
       </div>
     </div>
     <div className="col">
       <div className="form-outline">
-        <input name="luggage" type="number" min="0"   id="form3Example6" onInput={formValidate} required={false} value={bform.passengerList[0].luggage}  onChange={e => setbform({...bform,passengerList:{...bform.passengerList,luggage : e.target.value}})} className="form-control" />
+        <input name="luggage" type="number" min="0"   id="form3Example6" onInput={formValidate} required={false} value={bform.passengerList.luggage}  onChange={e => setbform({...bform,passengerList:{...bform.passengerList,luggage : e.target.value}})} className="form-control" />
         <label className="form-label" >Luggage Weight</label>
       </div>
     </div>
@@ -201,7 +201,7 @@ function AddBooking({book,bookingAction})
 
 <div className="text-danger" >
 
-  <p id="error" style={{backgroundColor:"black"}}></p>
+  <p id="error" style={{backgroundColor:""}}></p>
 
 </div>
 <div className="row btn-group">
@@ -210,7 +210,7 @@ function AddBooking({book,bookingAction})
   </div>
   <div className="text-warning">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="error1" style={{backgroundColor:"black"}}>  Edit form to submit</p>
+    <p id="error1" style={{backgroundColor:""}}>  Edit form to submit</p>
   </div>
   </div>
      
@@ -219,6 +219,7 @@ function AddBooking({book,bookingAction})
       </div>
       </div>
       </div>
+      <Footer/>
       </>
     )
 }

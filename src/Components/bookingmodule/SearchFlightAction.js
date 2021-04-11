@@ -30,9 +30,10 @@ function SearchFlightAction({searchFlight,searchforFlightAction,credentials})
 
  function handleBook(id)
  {
+    
     history.push({
         pathname:'/addbooking',
-        state:id
+        state:{id}
 
     })
   window.location.reload(false)

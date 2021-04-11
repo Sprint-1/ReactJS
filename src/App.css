@@ -247,6 +247,12 @@ i {
 	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
 }
 
+#containerbform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
 #containersform
 {
 	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
