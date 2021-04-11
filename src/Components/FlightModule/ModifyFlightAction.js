@@ -2,8 +2,10 @@ import react from 'react'
 import {useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import ModifyFlight from './ModifyFlight'
+import homebg from '../pictures/homebg.jpg'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Header from '../Header'
+import Footer from '../Footer'
 
 function ModifyFlightAction()
 {
@@ -63,16 +65,19 @@ function ModifyFlightAction()
     return(
         <Router>
             <Header/>
-        <div id="fform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="fform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containermfform" className="col-sm-4 p-5" style={{borderRadius:"30px"}}>
                 <Switch>
           <Route path="/modifyflight">
               <ModifyFlight id={location.state.flightNumber} uForm={fForm}/>
           </Route>
       </Switch>
-                    <h4 className="font-weight-bold mb-2"> Update Details </h4>
+                    <h4 className="font-weight-bold mb-4"> Update Details </h4>
         <form  id="form">
        
 
@@ -108,9 +113,9 @@ function ModifyFlightAction()
 </div>
 
  
-  <div className="text-warning">
+  <div className="text-danger">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="error1" className="bg-dark">Fill the Form</p>
+    <p id="error1" className="bg">Fill the Form</p>
   </div>
   <div id="link" className="btn" style={{display:"none"}}>
         <Link to="/modifyflight" className="btn btn-primary font-weight-bold" >Update</Link>
@@ -122,6 +127,7 @@ function ModifyFlightAction()
       </div>
       </div>
       </div>
+      <Footer/>
       </Router>
       
     )

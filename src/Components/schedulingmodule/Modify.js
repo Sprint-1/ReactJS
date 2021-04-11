@@ -2,8 +2,10 @@ import react from 'react'
 import {useLocation} from 'react-router-dom'
 import {useState} from 'react'
 import ModifyActions from './ModifyActions';
+import homebg from '../pictures/homebg.jpg'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Header from '../Header';
+import Footer from '../Footer';
 
 function Modify()
 {
@@ -109,10 +111,13 @@ function Modify()
     return(
         <Router>
           <Header/>
-        <div id="sform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="sform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containermform" className="col-sm-4 p-4" style={{borderRadius:"30px"}}>
 
                     <h4 className="font-weight-bold mb-2"> Update Details </h4>
         <form  id="form">
@@ -214,9 +219,9 @@ function Modify()
 </div>
 
  
-  <div className="text-warning">
+  <div className="text-danger">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="error1" className="bg-dark">Fill the Form</p>
+    <p id="error1" className="bg">Fill the Form</p>
   </div>
   <div id="link" className="btn" style={{display:"none"}}>
         <Link to="/modifyactions" className="btn btn-primary font-weight-bold" >Update</Link>
@@ -232,6 +237,7 @@ function Modify()
       </div>
       </div>
       </div>
+      <Footer/>
       </Router>
       
     )

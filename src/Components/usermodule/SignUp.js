@@ -4,6 +4,8 @@ import { validEmail} from './Regex.js';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import SignUpAction from './SignUpAction.js';
 import Header from './Header.js';
+import homebg from '../pictures/homebg.jpg'
+import Footer from '../Footer.js';
 
 
 
@@ -49,7 +51,7 @@ function SignUp({adduser,registerAction})
       }
       else if(uType==="select")
       {
-          error1.innerHTML="select usertype"
+          error.innerHTML="select usertype"
       }
       else if(upassword.length<8)
       {
@@ -83,20 +85,24 @@ function SignUp({adduser,registerAction})
     return(
         <Router>
             <Header/>
-        <div id="SgUForm" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="SgUForm" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"85vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                
+                <div id="containersignup" className="col-sm-4  mt-4" style={{borderRadius:"30px"}}>
 
 <Switch>
     <Route path="/signupactions">
         <SignUpAction SgUForm={SgUForm}/>
     </Route>
 </Switch>
-                    <h4 className="font-weight-bold mb-4"> Registration Form </h4>
+                    <h4 className="font-weight-bold mb-4 pt-3"> Registration Form </h4>
 
 
-        <form action="#" id='form'>
+        <form action="#" id='form' className="p-3">
        
 
   <div className="row mb-2">
@@ -147,23 +153,25 @@ function SignUp({adduser,registerAction})
   
 <div className="text-danger" >
 
-  <p id="error" style={{backgroundColor:"black"}}></p>
+  <p id="error" style={{backgroundColor:""}}></p>
 
 </div>
 <div className="row btn-group">
   
   <div className="text-warning">
      
-    <p id="error1" style={{backgroundColor:"black"}}></p>
+    <p id="error1" style={{backgroundColor:""}}></p>
   </div>
   </div>
       </form>
-      <div className="btn btn-primary ">
+      <div className="btn btn-warning font-weight-bold " style={{backgroundColor:"#e3afbc"}}>
       <Link to="/signupactions"   id="formregister"   style={{pointerEvents:"none",color:"black"}} >Register</Link>
   </div>
       </div>
       </div>
+    
       </div>
+      <Footer/>
       </Router>
 
     )

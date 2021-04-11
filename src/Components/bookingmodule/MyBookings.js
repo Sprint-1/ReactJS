@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import {fetchAllBookingsAction } from '../../redux/reduxbooking/BookingActions'
 import { useHistory } from "react-router-dom";
 import BookingHeader from './BookingHeader';
+import Footer from '../Footer';
 
 
 
@@ -71,9 +72,9 @@ function MyBookings({bookingsList,fetchAllBookingsAction})
       ) : (
           <Router>
               <BookingHeader/>
-          <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
+          <div className="container-fluid list" style={{ backgroundColor: "#acb6e5",minHeight:"90vh"}}>
      <div id="marq">
-     <marquee className="text-dark">Bookings made by you</marquee>
+     <marquee className="text-dark" style={{backgroundColor:"#f3d250"}}>Bookings made by you</marquee>
      </div>
          <div id="btnContainer" className="container-fluid" >
             <div className="container  col-sm-9" style={{ backgroundColor: "#acb6e5"}}>
@@ -146,7 +147,7 @@ function MyBookings({bookingsList,fetchAllBookingsAction})
                                 </tr>
                             <tr>
                                  <th scope="row">Luggage: {b.passengerList[0].luggage} kgs</th>
-                                 <td className="font-weight-bold">{b.passengerList[0].pnrNumber}</td>
+                                 <td className="font-weight-bold">PNR Number :{b.passengerList[0].pnrNumber}</td>
      
                              </tr>
                         </tbody>
@@ -162,7 +163,7 @@ function MyBookings({bookingsList,fetchAllBookingsAction})
       </div>
 
       </div>
-   
+   <Footer/>
       </Router>
 
     )

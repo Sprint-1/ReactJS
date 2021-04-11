@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import logof from './pictures/logof.png'
 
 
  function Header()
@@ -9,16 +10,20 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
         <div className="bg">
          <Router>
-        <nav id="navbar" className="row navbar navbar-expand-lg navbar-dark" style={{backgroundColor:"black"}}>
+        <nav id="navbar" className="row navbar navbar-expand-lg navbar-dark">
 
           <div className="container col-sm-9">
-            <Link className="navbar-brand font-weight-bold" to="/">
+          < div className="col-sm-2">
+              <img src={logof} style={{height:"45px",width:"45px",borderRadius:"50%"}}></img>
+            <a className="navbar-brand font-weight-bold pl-2"  href="/body">
               Fly Away
-            </Link>
-            <a className="nav-link active font-weight-bolder text-white" aria-current="page" href="/body">
-                Home
+            </a>
+            </div>
+           <a className="nav-link active font-weight-bolder" style={{color:"white"}} aria-current="page" href="/body">
+           Home
            </a>
-           <div className="dropdown ">
+         
+           <div className="dropdown">
                     <button className="dropbtn w3-btn w3-round-xlarge">Flight</button>
                             <div className="dropdown-content">
                                <a href="/addflight">Add Flight</a>
@@ -49,9 +54,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
                 <div className="dropdown float-right mr-5">
                       <button className="dropbtn">Logout</button>
                           <div className="dropdown-content">
-                               <Link to="/">Profile</Link>
-                                <Link to="/">Delete</Link>
-                                <Link to="/">Logout</Link>
+                          <a href="/profile">Profile</a>
+                                <a href="/logout">Logout</a>
                           </div>
                 </div>
 

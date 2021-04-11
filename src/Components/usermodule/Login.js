@@ -1,7 +1,9 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Header from './Header'
+import homebg from '../pictures/homebg.jpg'
 import LoginAction from './LoginAction'
+import Footer from '../Footer'
 
 function Login()
 {
@@ -42,17 +44,20 @@ function Login()
     return(
         <Router>
             <Header/>
-        <div id="SgIForm" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="SgIForm" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"85vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containerlogin" className="col-sm-4 mt-4" style={{borderRadius:"30px"}}>
                 <Switch>
     <Route path="/loginactions">
         <LoginAction userName={userName} password={password}/>
     </Route>
 </Switch>
-                    <h4 className="font-weight-bold mb-2"> Login Form </h4>
-        <form action="#">
+                    <h4 className="font-weight-bold mb-2 pt-3"> Login Form </h4>
+        <form action="#" className="p-3">
        
 
   <div className="row mb-2">
@@ -76,17 +81,18 @@ function Login()
   
 <div className="text-danger" >
 
-  <p id="error" style={{backgroundColor:"black"}}></p>
+  <p id="error" style={{backgroundColor:""}}></p>
 
 </div>
 
       </form>
-      <div className="btn btn-primary ">
+      <div className="btn btn-primary " style={{backgroundColor:"#e3afbc"}}>
       <Link to="/loginactions"   id="formlogin"   style={{pointerEvents:"none",color:"black"}} >Login</Link>
   </div>
       </div>
       </div>
       </div>
+      <Footer/>
       </Router> 
     )
 }

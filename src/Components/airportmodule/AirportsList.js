@@ -2,6 +2,7 @@ import react, { useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import {fetchAllAirportsAction } from '../../redux/reduxairport/AirportActoins'
+import Footer from '../Footer'
 import Header from '../Header'
 
 
@@ -53,7 +54,7 @@ function AirportsList({getAirportList,fetchAllAirportsAction})
       ) : (
           <Router>
               <Header/>
-          <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
+          <div  className="container-fluid list " style={{ backgroundColor: "#acb6e5",minHeight:"90vh"}}>
          <div id="btnContainer" className="container-fluid" >
             <div className="container  col-sm-9" style={{ backgroundColor: "#acb6e5"}}>
         <button className=" btn btn-outline-dark m-1 text-dark font-weight-bold " style={{ backgroundColor: "Aqua"}} onClick={listView}>List </button> 
@@ -65,13 +66,13 @@ function AirportsList({getAirportList,fetchAllAirportsAction})
       </div>
       </div>
 
-      <div id="row" className="container mt-1 ">
+      <div id="row"  className="container mt-1">
            
                 {
                     getAirportList &&
                     getAirportList.fAllAirports &&
                     getAirportList.fAllAirports.map(a=>
-                        <div id="col" className="column bg-white border border-tomato">
+                        <div id="col" className="column bg-white  border border-tomato mb-3 ">
                         
                         <table className="table table-stripped">
                         <thead>
@@ -94,9 +95,11 @@ function AirportsList({getAirportList,fetchAllAirportsAction})
            
        
       </div>
-
+     
       
       </div>
+<Footer/>
+      
     
       </Router>
 

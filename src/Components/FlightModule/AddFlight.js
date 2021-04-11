@@ -1,7 +1,9 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {FlightAction } from '../../redux/reduxflight/FlightAction'
+import Footer from '../Footer'
 import Header from '../Header'
+import homebg from '../pictures/homebg.jpg'
 
 
 
@@ -122,12 +124,15 @@ function AddFlight({addFlight,FlightAction})
     return(
 <>
 <Header/>
-        <div id="fform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="fform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containerfform" className="col-sm-4 mt-4" style={{borderRadius:"30px"}}>
 
-                    <h4 className="font-weight-bold mb-2"> Flight Form </h4>
+                    <h4 className="font-weight-bold mb-2 p-4"> Flight Form </h4>
         <form action="#">
        
 
@@ -166,9 +171,9 @@ function AddFlight({addFlight,FlightAction})
 </div>
 <div className="row btn-group">
   <div className="btn">
-      <input type="submit" value="" id="formsubmit"  disabled onClick={formValidate}/>
+      {/* <input type="submit" value="" id="formsubmit"  disabled onClick={formValidate}/> */}
   </div>
-  <div className="text-warning">
+  <div className="text-danger">
       {/* <input type="reset" id="formreset"  /> */}
     <p id="error1">  Edit form to submit</p>
   </div>
@@ -177,6 +182,7 @@ function AddFlight({addFlight,FlightAction})
       </div>
       </div>
       </div>
+      <Footer/>
       </>
         
     )

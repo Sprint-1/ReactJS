@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import logof from '../pictures/logof.png'
 
 
  function Header()
@@ -9,12 +10,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
         <div className="bg">
          <Router>
-        <nav id="navbar" className="row navbar navbar-expand-lg navbar-dark" style={{backgroundColor:"black"}}>
+        <nav id="navbar" className="row navbar navbar-expand-lg navbar-dark" >
 
-          <div className="container col-sm-9">
-            <Link className="navbar-brand font-weight-bold" to="#">
+          <div className="container">
+          < div className="col-sm-3">
+              <img src={logof} style={{height:"45px",width:"45px",borderRadius:"50%"}}></img>
+            <a className="navbar-brand font-weight-bold pl-2"  href="/">
               Fly Away
-            </Link>
+            </a>
+            </div>
           {/* <a href="/" >Home</a> */}
           
           </div>
@@ -22,16 +26,16 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
           <div className="col-sm-3 ">
         
 
-                <div className="dropdown float-right mr-5">
+                <div  className="dropdown float-right mr-5 ">
                    
-                               <a href="/signup">Signup</a>
+                               <a href="/signup" className=" font-weight-bold " style={{color:"white"}}>Signup</a>
                                   
                         
                 </div>
 
-                <div className="dropdown float-right mr-5">
+                <div  className="dropdown float-right mr-5 k">
                     
-                    <a href="/login">Login</a>
+                    <a href="/login" className=" font-weight-bold " style={{color:"white"}}>Login</a>
                     
              
      </div>

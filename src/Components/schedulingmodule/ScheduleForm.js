@@ -1,7 +1,9 @@
 import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {scheduleFlightAction } from '../../redux/SFlightActions'
+import Footer from '../Footer'
 import Header from '../Header'
+import homebg from '../pictures/homebg.jpg'
 
 
 
@@ -175,22 +177,20 @@ function ScheduleForm({addFlight,scheduleFlightAction})
       setSubmit(sForm)
     }
 
-   
-      
-     
-    
-
 
     return(
 <>
 <Header/>
-        <div id="sform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="sform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containersform" className="col-sm-4 mt-4 " style={{borderRadius:"30px"}}>
 
-                    <h4 className="font-weight-bold mb-2"> Scheduing Form </h4>
-        <form action="#">
+                    <h4 className="font-weight-bold mb-2 pt-3"> Scheduling Form </h4>
+        <form action="#" className="p-3" >
        
 
   <div className="row mb-2">
@@ -289,22 +289,24 @@ function ScheduleForm({addFlight,scheduleFlightAction})
   
 <div className="text-danger" >
 
-  <p id="error" style={{backgroundColor:"black"}}></p>
+  <p id="error" style={{backgroundColor:""}}></p>
 
 </div>
 <div className="row btn-group">
   <div className="btn">
       {/* <input type="submit" value="" id="formsubmit"  disabled onClick={formValidate}/> */}
   </div>
-  <div className="text-warning">
+  <div className="text-danger">
       {/* <input type="reset" id="formreset"  /> */}
-    <p id="error1" style={{backgroundColor:"black"}}>  Edit form to submit</p>
+    <p id="error1" style={{backgroundColor:""}}>  Edit form to submit</p>
   </div>
   </div>
       </form>
       </div>
       </div>
+      
       </div>
+      <Footer/>
         </>
     )
 }

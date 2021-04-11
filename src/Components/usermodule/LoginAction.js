@@ -7,9 +7,20 @@ import axios from 'axios'
 function LoginAction(props)
 {
 
+
+    function preback()
+        {
+          window.history.forward();
+        }
+        setTimeout(preback(),0);
+      
+        window.onunlod=()=>(null);
+      
     const history=useHistory()
 
         const [msg,setMsg]=useState("")
+
+        
 
      useEffect(()=>
     {     
@@ -19,8 +30,11 @@ function LoginAction(props)
 
          if(response.data.userType==="admin")
          {
+             sessionStorage.setItem("password",response.data.password)
              sessionStorage.setItem("name",response.data.userName)
              sessionStorage.setItem("id",response.data.userId)
+          
+             
             history.push({
                 pathname:'/body'
             })
@@ -32,6 +46,7 @@ function LoginAction(props)
         else{
             sessionStorage.setItem("name",response.data.userName)
             sessionStorage.setItem("id",response.data.userId)
+            sessionStorage.setItem("password",response.data.password)
             history.push({
                 pathname:'/booking'
             })

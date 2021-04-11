@@ -2,7 +2,9 @@ import react, { useRef, useState ,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {AirportAction} from '../../redux/reduxairport/AirportActoins'
 import Header from '../Header'
+import homebg from '../pictures/homebg.jpg'
 import {useHistory} from 'react-router-dom'
+import Footer from '../Footer'
 
 
 
@@ -112,12 +114,15 @@ function myFunction1(){
     return(
 <>
 <Header/>
-        <div id="aform" className="container-fluid pt-4" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+        <div id="aform" className="container-fluid pt-4" style={{
+            backgroundImage: `url(${homebg})`,
+            backgroundSize: "cover",
+            height:"90vh"}}>
             <div className="row">
                 <div className="col-sm-4"></div>
-                <div className="col-sm-4">
+                <div id="containeraform" className="col-sm-4 p-4" style={{borderRadius:"30px"}}>
 
-                    <h4 className="font-weight-bold mb-2">Add Airport</h4>
+                    <h4 className="font-weight-bold mb-2 ">Add Airport</h4>
         <form action="#">
        
 
@@ -191,6 +196,7 @@ function myFunction1(){
       </div>
       </div>
       </div>
+      <Footer/>
         </>
     )
 }

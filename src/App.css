@@ -39,7 +39,6 @@
 
 
 
-
 body{
 	font-family: 'Roboto', sans-serif;
 }
@@ -211,6 +210,67 @@ i {
 }
 
 
+#containeraform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#containerfform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#containersignup
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#pro{
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+	height: 90vh;
+	padding-top: 120px;
+}
+
+.procontainer{
+	background-color: rgba(0,0,0,0.6);
+	height: 400px;
+	width:60%;
+	margin: 0px auto;
+}
+
+#containerlogin
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#containersform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#containermform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+
+#containermfform
+{
+	/* background-image: linear-gradient(to right,#f78888,#f3d250); */
+	background-image: linear-gradient(to right,#eee2dc,#8fc1e3);
+}
+/* #formregister{
+	background-image: linear-gradient(to right,#5A5560,#9B786F);
+} */
+/* #text
+{
+	background-color: white;
+} */
 /* //Styling for background image in home page */
 
 .bg{
@@ -231,7 +291,31 @@ i {
 
 #navbar{
 	width: 101%;
+	background-image: linear-gradient(to right,#edc7b7,#ac3b61);
 }
+
+.profile{
+	position: relative;
+	right: -20px;
+
+}
+
+.profile1{
+	position: relative;
+	right:50px;
+}
+
+.list{
+	background-image: linear-gradient(to bottom,#b4bfe5,#b4bfe5,#ffccbc);
+}
+.footerbg{
+	background-color: #46344E;
+}
+
+
+/* .sflist{
+	background-color: rgba(0, 0, 0, 0.5); 
+} */
 
 /* #a{
 	background-color: black;
@@ -241,12 +325,14 @@ i {
 Styling for dropdown list on navbar */
 
 .dropbtn {
-	background-color: #0e031b;
+	 background-color: rgba(0, 0, 0, 0); 
+	
 	color: white;
 	padding: 10px;
 	font-size: 16px;
 	font-weight: bold;
-	border-radius: 15px;border:white;
+	border-radius: 15px;
+	border:white;
 	
 	
   }
@@ -277,7 +363,7 @@ Styling for dropdown list on navbar */
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #e7400d;}
+  .dropdown:hover .dropbtn {background-color: rgba(0, 0, 0, 0); }
 
 
   /* Styling for scheduling form */
@@ -286,7 +372,12 @@ Styling for dropdown list on navbar */
 	background-image: linear-gradient(to right,#acb6e5,#86fde8);
   }
 
-
+.admincard .col{
+	background-color: rgba(1, 1, 1, 0.5);
+	height: 180px;
+	color: white;
+	border: solid 2px white;
+}
 
   #formsubmit {
 	background-color:linear-gradient(to right,#acb6e5,#86fde8);
@@ -328,7 +419,7 @@ Styling for dropdown list on navbar */
 
 
   #marq{
-	  background-color: lawngreen;
+	  background-color: #aaabb8;
 	  border-color: black;
 	  font-weight: bold;
   }

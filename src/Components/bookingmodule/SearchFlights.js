@@ -6,10 +6,18 @@ import SearchFlightAction from './SearchFlightAction'
 
 import image from '../schedulingmodule/searchflght.png'
 import BookingHeader from './BookingHeader'
+import Footer from '../Footer'
 
 function SearchFlights()
 {
 
+  function preback()
+  {
+    window.history.forward();
+  }
+  setTimeout(preback(),0);
+
+  window.onunlod=()=>(null);
   
   
   const [cred,setCred]=useState({
@@ -62,10 +70,10 @@ function SearchFlights()
       <Router>
        
         <BookingHeader/>
-          <div id="search" className="container-fluid row" style={{height:"100vh"}}>
-            <div className="col-sm-6" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+          <div id="search" className="container-fluid row" style={{minHeight:"90vh"}}>
+            <div className="col-sm-6" style={{ backgroundColor: "#acb6e5",minHeight:"90vh"}}>
               
-               <h4 className="font-weight-bold"> Search </h4>
+               <h4 className="font-weight-bold mt-4"> Search </h4>
 
                 
         <form action="#">
@@ -135,7 +143,7 @@ function SearchFlights()
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"} }></div>
       </div>
-
+<Footer/>
       
       </Router>
     )

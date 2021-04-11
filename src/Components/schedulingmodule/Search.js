@@ -3,14 +3,12 @@ import { useSelector } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import Header from '../Header'
 import SearchActions from './SearchActions'
-
-import image from './searchflght.png'
+import searchbg from '../pictures/searchbg.jpg'
+import Footer from '../Footer'
 
 function Search()
 {
 
-  
-  
   const [cred,setCred]=useState({
     src:"INDIA",
     dstn:"INDIA",
@@ -61,15 +59,14 @@ function Search()
       <Router>
        
         <Header/>
-          <div id="search" className="container-fluid row" style={{height:"100vh"}}>
-            <div className="col-sm-6" style={{ backgroundColor: "#acb6e5",height:"100vh"}}>
+          <div id="search" className="container-fluid row" style={{minHeight:"90vh"}}>
+            <div className="col-sm-6" style={{ backgroundColor: "#acb6e5",minHeight:"90vh"}}>
               
-               <h4 className="font-weight-bold"> Search </h4>
+               <h4 className="font-weight-bold mt-4"> Search </h4>
 
                 
         <form action="#">
        
-
   
 
  <div className="row ">
@@ -130,12 +127,11 @@ function Search()
       </Switch>
       </div>
       <div id="searchbg" className="container-fluid col-sm-6 " 
-          style={{backgroundImage: `url(${image})`,height:"auto",position: "relative",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"} }></div>
+          style={{backgroundImage: `url(${searchbg})`,backgroundRepeat:"no-repeat",backgroundAttachment:"fixed",
+          backgroundPosition: "right"}}></div>
       </div>
 
-      
+      <Footer/>
       </Router>
     )
 }

@@ -65,9 +65,9 @@ function GetList({flightsList,fetchAllFlightsAction})
       ) : (
           <Router>
               <Header/>
-          <div className="container-fluid" style={{ backgroundColor: "#acb6e5",height:"cover"}}>
+          <div className="container-fluid list" style={{ backgroundColor: "#acb6e5",minHeight:"90vh"}}>
      <div id="marq">
-     <marquee className="text-dark"> Booked Flights can not be modified and deleted</marquee>
+     <marquee className="text-dark" style={{backgroundColor:"#f3d250"}}> Booked Flights can not be modified and deleted</marquee>
      </div>
          <div id="btnContainer" className="container-fluid" >
             <div className="container  col-sm-9" style={{ backgroundColor: "#acb6e5"}}>
@@ -96,7 +96,7 @@ function GetList({flightsList,fetchAllFlightsAction})
                         <table className="table table-stripped">
                         <thead>
                              <tr className="table-danger">
-                                 <th scope="col" >Flight ID:{flight.flightNumber}</th>                              
+                                 <th scope="col" >Flight Details</th>                              
                             </tr>
                          </thead>
                          <tbody>
@@ -148,7 +148,7 @@ function GetList({flightsList,fetchAllFlightsAction})
 
       
       </div>
-   
+   <Footer/>
       </Router>
 
     )
